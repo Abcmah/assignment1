@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/index.css">
+  <title>Document</title>
+</head>
+<body> <div class="nav">
+  <div class="logo">
+    <h2><a href="home.html">BamStarTech</a> </h2>
+  </div>
+  <div class="navigation">
+    <ul>
+      <li><a href="home.html"><span class="icon"><ion-icon name="home"></ion-icon></span>Home</a></li>
+      <li><a href="#"><span class="icon"><ion-icon name="information-circle"></ion-icon></span>About us</a></li>
+      <li><a href="#"><span class="icon"><ion-icon name="business"></ion-icon></span>Services</a></li>
+      <li><a href="#"><span class="icon"><ion-icon name="call"></ion-icon></span>Contact</a></li>
+      <li><a href="login.html"><span class="icon"><ion-icon name="person"></ion-icon></span>User</a></li>
+    </ul>
+  </div>
+</div>
+   <div class="wrapper">
+     <img src="./images/panda.png" alt="">
+     <!-- <h2 class="text-right">Welcome</h2> -->
+    <div class="form-wrapper login">
+      <form action="login.php" method="post">
+        <!-- <h2 class="text-right">BamStar</h2> -->
+        <h2>Login</h2>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" id="username" name="email" placeholder="Username" required>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <!-- <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="text" id="otp" name="otp" placeholder="OTP" >
+        </div> -->
+        <div class="forgot-pass">
+          <a href="#">forgot password</a>
+        </div>
+        <button name="login" type="submit">Login</button>
+        <div class="sing-link">
+          <p>Don't have an account?<a href="#" onclick="registerActive()">Register</a></p>
+        </div>
+      </form>
+    </div>
+    <div class="form-wrapper register">
+      <form action="login.php" method="post">
+        <h2>Registration</h2>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" id="full_name" name="full_name" placeholder="Full Names" required>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" id="username" name="email" placeholder="email" required>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="cpassword" name="cpassword" placeholder="Password" required>
+        </div>
+        <button class="reg-btn" disabled name="register" type="submit">Register</button>
+        <div class="sing-link">
+          <p>Already have an account?<a href="#" onclick="loginActive()">login</a></p>
+        </div>
+      </form>
+    </div>
+   </div>
+   <script>
+    let pass = document.querySelectorAll('#password')[1];
+    let passc = document.querySelector("#cpassword");
+    let regBtn = document.querySelector('.reg-btn');
+    passc.addEventListener('keyup',()=>{
+      if(pass.value != passc.value){
+        passc.style.border = '1px solid red';
+      }else{
+        regBtn.disabled = false;
+        passc.style.border = '1px solid #fff';
+
+      }
+    })
+   </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
